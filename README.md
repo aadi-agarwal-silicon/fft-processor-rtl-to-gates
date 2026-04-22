@@ -71,12 +71,12 @@ fft_project_controller
 ```
 
 ### 📂 Project Structure
-rtl/          → Verilog design  
-matlab/       → MATLAB script  
-synthesis/    → Yosys script + netlist
-constraints/  → BitStream File for BASYS 3 Board
-results/      → Output images  
-docs/         → Diagrams  
+- rtl/          → Verilog design
+- matlab/       → MATLAB script
+- synthesis/    → Yosys script + netlist
+- constraints/  → BitStream File for BASYS 3 Board
+- results/      → Output images
+- docs/         → Diagrams
 
 ### 🚀 Future Work
 1. Static Timing Analysis (OpenSTA)
