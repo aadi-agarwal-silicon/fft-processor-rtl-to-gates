@@ -6,7 +6,7 @@ FFT processor implemented in Verilog and synthesized using Yosys (Sky130). Imple
 ## 📌 Overview
 This project implements an 8-point FFT (Fast Fourier Transform) processor in Verilog and explores how a signal processing algorithm maps to real hardware.
 
-The design was implemented on FPGA and further analyzed using logic synthesis (Yosys + Sky130), providing insights into hardware complexity, area, and design trade-offs.
+The design was implemented on the Basys 3 FPGA board and further analyzed using logic synthesis (Yosys + Sky130), providing insights into hardware complexity, area, and design trade-offs.
 
 
 ## 🏗️ Architecture
@@ -19,6 +19,7 @@ The system consists of:
 - Memory for intermediate data storage
 - FSM-based control logic
 - UART interface for MATLAB–FPGA communication
+- Implemented and tested on Basys 3 FPGA (Artix-7)
 
 ## ⚙️ Design Flow
 
@@ -58,10 +59,10 @@ Multipliers are implemented using logic gates, which significantly increases har
 
 ## ▶️ How to Run
 
-### FPGA
-- Synthesize using Vivado  
-- Program Basys 3  
-- Connect UART (115200 baud)
+### FPGA (Basys 3)
+- Synthesize and implement using Xilinx Vivado  
+- Program the design onto Basys 3 FPGA  
+- Connect UART via USB (115200 baud)  
 
 ### MATLAB
 Run:
@@ -73,6 +74,7 @@ fft_project_controller
 rtl/          → Verilog design  
 matlab/       → MATLAB script  
 synthesis/    → Yosys script + netlist
+constraints/  → BitStream File for BASYS 3 Board
 results/      → Output images  
 docs/         → Diagrams  
 
@@ -84,7 +86,7 @@ docs/         → Diagrams
 ### 🛠 Tools Used
 1. MATLAB
 2. Yosys
-3. Vivado
+3. Xilinx Vivado (Basys 3 FPGA - Artix-7)
 4. Sky130
 5. Verilog HDL
 
