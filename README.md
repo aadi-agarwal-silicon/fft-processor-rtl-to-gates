@@ -9,9 +9,9 @@ This project implements an 8-point FFT (Fast Fourier Transform) processor in Ver
 The design was implemented on the Basys 3 FPGA board and further analyzed using logic synthesis (Yosys + Sky130), providing insights into hardware complexity, area, and design trade-offs.
 
 
-## 🏗️ Architecture
+## 🏗️ Architecture and Design Flow
 
-![Block Diagram](docs/block_diagram.png)
+<img width="1200" height="765" alt="ChatGPT Image Apr 22, 2026, 11_30_10 PM" src="https://github.com/user-attachments/assets/ca61fad1-a808-4ef0-8029-45feb721ae3b" />
 
 The system consists of:
 
@@ -21,10 +21,7 @@ The system consists of:
 - UART interface for MATLAB–FPGA communication
 - Implemented and tested on Basys 3 FPGA (Artix-7)
 
-## ⚙️ Design Flow
-
-![Flow](docs/flow.png)
-
+The brief design flow is as follows:
 1. Generate input samples in MATLAB  
 2. Send data via UART  
 3. FPGA computes FFT  
@@ -42,8 +39,6 @@ The system consists of:
 
 ## 📊 Synthesis Results
 
-![Synthesis Stats](results/stat.png)
-
 - Total Cells: **9661**  
 - Flip-Flops: **306**  
 - Area: **~68,311 µm²**
@@ -52,8 +47,6 @@ The system consists of:
 Multipliers are implemented using logic gates, which significantly increases hardware area.
 
 ## 📈 Output Results
-
-![FFT Output](results/fft_output.png)
 
 - FPGA output matches MATLAB FFT (with minor quantization error)
 
