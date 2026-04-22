@@ -1,0 +1,20 @@
+# Read design
+read_verilog fft8_q14.v uart_top.v uart_rx.v uart_tx.v baud_gen.v
+
+# Set top module
+hierarchy -top uart_top
+
+# Synthesis
+synth -top uart_top
+
+# Map flip-flops
+dfflibmap -liberty sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Technology mapping
+abc -liberty sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Print stats (area, cells)
+stat -liberty sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Write netlist
+write_verilog fft_mapped.v
